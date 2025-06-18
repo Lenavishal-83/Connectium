@@ -19,7 +19,6 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -28,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.get('/', (req, res) => res.send('connecting API'));
+app.get('/', (req, res) => res.send('Connectium API'));
 
 // Socket.IO for real-time updates
 io.on('connection', (socket) => {
